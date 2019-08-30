@@ -1,5 +1,0 @@
-sudo rm -r app
-scp -r wiston-win@$1:/home/wiston/ServiciosNicaVentas/Lv1/app .
-sudo rm Dockerfile
-scp -r wiston-win@$1:/home/wiston/ServiciosNicaVentas/Lv1/Dockerfile .
-echo Respaldo Realizado
