@@ -78,6 +78,7 @@ En base a lo anterior expuesto se han realizaron  4 fases de  cumpliendo con los
 
 
 `docker pull wistonmiguel/nicaventas:Lv4C
+
 docker pull wistonmiguel/nicaventas:Lv4D`
 
 
