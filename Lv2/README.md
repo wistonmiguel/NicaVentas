@@ -43,7 +43,7 @@ Procedemos a evolucionar el fichero que teníamos con la creación de nuestro fi
     .
     INSERT INTO location (country, city, active) values ('AF', 'Kabul', 'False');
 
-Este fichero sql crea para mysql una tabla llamada location, esta tabla determinará si en una determinada ciudad de un pais está autorizada la venta de articulos o no por medio del campo active. A nivel de ejemplo se han agregado en estado false las capitales a nivel mundial ya que una serie de operadores son los encargados de activar y desactivar las posibilidades de venta en las ciudades. A modo práctico los operadores podrán contar con este catálogo de capitales para su activación sin necesidad de agregarlas, se agregarían solamente las ciudades de paises que no estén registradas.
+Este fichero sql crea para mysql una tabla llamada location, esta tabla determinará si en una ciudad específica de un pais está autorizada o no la venta de articulos medio del campo active. A nivel de ejemplo se han agregado en estado false las capitales a nivel mundial ya que una serie de operadores son los encargados de activar y desactivar las posibilidades de venta en las ciudades. A modo práctico los operadores podrán contar con este catálogo de capitales para su activación sin necesidad de agregarlas, se agregarían solamente las ciudades de paises que no estén registradas. También se inicializan como ventas autorizadas algunas ciudades de Nicaragua (Managua, León, Rivas, Jinotega, Corn Island) y España (Madrid, Barcelona, Valencia, Leon, Alcala de Henares) que puedan servir para futuras pruebas.
 
 En este momento ya podemos realizar modificaciones al código de app.py para que en vez de devolver una respuesta dummy fija se atienda las solicitudes dirigidas al framework Flask hacia nuestra base de datos mysql. Listamos los cambios realizados al fichero en cuestión: 
 
@@ -58,8 +58,9 @@ En este momento ya podemos realizar modificaciones al código de app.py para que
     MarkupSafe==1.1.1
     mysqlclient==1.4.2.post1
     PyMySQL==0.9.3
-Finalmente ejecutamos con Python el fichero python.py exponiendo el puerto 5000 (Flask) al exterior de todo contenedor creado a partir de nuestra imagen.
-El fichero que se ejecuta de manera indeterminada junto con el servicio de Flask es nuestra app.py la cual consta del siguiente código:
+
+Finalmente cabe recalcar que a travéz del fichero app.py se encontrará exponiendo el puerto 5000 (Flask) desde el interior de todo contenedor creado a partir de nuestra imagen para ser asociado al puerto 8000 donde se realizaran las pruebas. El fichero que se ejecuta de manera indeterminada junto con el servicio de Flask es nuestra app.py la cual consta del siguiente código:
+
 > app.py
 
     #!flask/bin/python
@@ -223,7 +224,7 @@ Para finalizar agregamos a nuestro proyecto el fichero docker-compose.yml que no
         volumes:
           - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
 
-Al ejecutar el comando docker-compose up, obtendremos el despliegue total de los servicios de NicaVentas Lv2 y MySql.
+Al ejecutar el comando docker-compose up, obtendremos el despliegue total de los servicios de NicaVentas:Lv2 y MySql.
 
 
 ## Demostración y Resultados
