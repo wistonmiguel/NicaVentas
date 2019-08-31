@@ -360,6 +360,8 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados desde e
 
 `docker-compose build`
 
+[![Everything Is AWESOME](http://i.imgur.com/Ot5DWAW.png)](https://youtu.be/StTqXEQ2l-Y?t=35s "Everything Is AWESOME")
+
 [![image](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/16.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/16.jpg)
 
 2 ) Desplegamos los servicios usando docker-compose.
