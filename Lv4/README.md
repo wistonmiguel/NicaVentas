@@ -383,17 +383,19 @@ Condiciones_NV, solicitando el precio de un producto.
     curl localhost:8001/price/AZ00002
 [![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/19.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/19.jpg)
 
-5 ) Consultaremos la variación del precio para la venta de helados en León, Nicaragua y Corn Island, Nicaragua (Clima Soleado y Lluvioso)
+5 ) Consultaremos la variación del precio para la venta de helados en León, Nicaragua y Nueva Guinea, Nicaragua (Ciudades generalmente con clima Soleado y Lluvioso)
 
 ```
 curl -d '{"city":"Leon", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
 
-curl -d '{"city":"Corn Island", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
+curl -d '{"city":"Nueva Guinea", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
 ```
+
+Podemos observar que en efecto se ha detectado variación en la venta de helados, para León tenemos que su precio de venta sería de 15 (10x1.5) ya que no está lloviendo serían 50% más caros. En el caso de Nueva Guinea observamos que está lloviendo por lo que la venta de helados sería 50% más barata contando con un precio de venta de 5 (10x0.5). Finalmente se da por entendido que un producto que no tenga regla asociada mantiene su precio base como precio de venta sin importar las condiciones metereológicas.
 
 [![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/22.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/22.jpg)
 
-5 ) Finalmente verificamos que la caché funcione
+5 ) Como último paso verificamos que las llamadas a nuestro microservicio Condiciones_NV sean guardadas en una caché de 5 minutos como políticas de optimización de recursos
 
 ```
 curl -d '{"city":"Leon", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
@@ -402,3 +404,6 @@ curl -d '{"city":"Corn Island", "country":"NI", "sku":"AZ00002"}' -H "Content-Ty
 ```
 
 [![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/23.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/23.jpg)
+
+
+En la imagen observamos que hemos vuelto a realizar las mismas consultas para las condiciones de venta de helados en León y Nueva Guinea de Nicaragua y como ya se habían realizado con anterioridad, Redis guardó estos registros y en esta ocasión nos devuelve los resultados desde la caché con un campo json con valor "hit"
