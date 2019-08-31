@@ -24,7 +24,7 @@ En base a lo anterior expuesto se han realizaron  4 fases de  cumpliendo con los
 -   Crear una imagen docker que contenga dicho microservicio y publicarla en `dockerhub`
 
 #### Entregables:
--   [Documento explicativo del trabajo realizado](https://github.com/wistonmiguel/NicaVentas/tree/master/Lv1?target=_blank)
+-   [Documento explicativo del trabajo realizado](https://github.com/wistonmiguel/NicaVentas/tree/master/Lv1)
 -   [URL de dockerhub para descargar la imagen](https://cloud.docker.com/u/wistonmiguel/repository/docker/wistonmiguel/nicaventas) 
 `docker pull wistonmiguel/nicaventas:Lv1`
 -   [Archivos necesarios para construir la imagen docker](https://drive.google.com/open?id=1ynMIGYTfGOd7TMHYsObjwycpcw6-Uwq8)
