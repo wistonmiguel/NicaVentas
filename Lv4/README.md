@@ -366,14 +366,14 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados desde e
 
 `docker-compose up`
 
-[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/8.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/8.jpg)
+[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/17.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/17.jpg)
 
 3 ) Realizamos las pruebas para acceder y verificar que tengamos ambos microservicios en ejecución 
 
     curl "localhost:8000/"
     curl "localhost:8001/"
 
-[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/9.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/9.jpg)
+[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/18.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/18.jpg)
 
 Como podemos observar la respuesta resulta satisfactoria en ambos casos, Flask está corriendo en cada microservicio y responde peticiones desde los puertos 8000 (Disponibilidad_NV) y 8001 (Condiciones_NV).
 
@@ -381,7 +381,7 @@ Como podemos observar la respuesta resulta satisfactoria en ambos casos, Flask e
 Condiciones_NV, solicitando el precio de un producto.
 
     curl localhost:8001/price/AZ00002
-[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/10.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/10.jpg)
+[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/19.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/19.jpg)
 
 5 ) Consultaremos la variación del precio para la venta de helados en León, Nicaragua y Corn Island, Nicaragua (Clima Soleado y Lluvioso)
 
@@ -391,7 +391,7 @@ curl -d '{"city":"Leon", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: app
 curl -d '{"city":"Corn Island", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
 ```
 
-[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/12.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/12.jpg)
+[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/20.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/20.jpg)
 
 5 ) Finalmente verificamos que la caché funcione
 
@@ -401,4 +401,4 @@ curl -d '{"city":"Leon", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: app
 curl -d '{"city":"Corn Island", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
 ```
 
-[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/12.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/12.jpg)
+[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/21.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/21.jpg)
