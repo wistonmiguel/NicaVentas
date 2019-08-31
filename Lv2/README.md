@@ -236,13 +236,13 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados y demos
   
 `docker-compose up`
 
-![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/3.jpg)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/8.jpg)
 
 3 ) Realizamos las pruebas pertinentes de peticiones GET para verificar la autorización de venta en Managua, Nicaragua
 
 `curl "localhost:8000/active?city=Managua&country=NI"`
 
-![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/4.jpg)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/9.jpg)
 
 Como podemos observar la respuesta fué una venta no autorizada debido a que la base de datos está apenas inicializada y ningún operador ha autorizado (actualizado) la venta en alguna ciudad de un pais.
 
@@ -250,13 +250,13 @@ Como podemos observar la respuesta fué una venta no autorizada debido a que la 
 
     curl -d '{"city":"Managua", "country":"NI", "active":"True"}' -H "Content-Type: application/json" -H "Authorization: Bearer 2234hj234h2kkjjh42kjj2b20asd6918" -X PUT localhost:8000/active
 
-![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/5.jpg)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/10.jpg)
 
 Se ha realizado la actualización del estado de autorización en las ventas de Managua, Nicaragua. Consultando nuevamente si la venta está autorizada el servicio api nos devuelve un active: True.
 
-![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/5.jpg)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/11.jpg)
 5 ) Finalmente si no existe una ciudad en el Pais donde necesitamos autorizar una venta la podemos agregar usando una solicitud POST
 
     curl -d '{"city":"Leon", "country":"NI", "active":"True"}' -H "Content-Type: application/json" -X POST localhost:8000/active
 
-![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/5.jpg)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/12.jpg)
