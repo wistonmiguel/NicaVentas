@@ -26,6 +26,7 @@ En base a lo anterior expuesto se han realizaron  4 fases de  cumpliendo con los
 #### Entregables:
 -   [Documento explicativo del trabajo realizado](https://github.com/wistonmiguel/NicaVentas/tree/master/Lv1)
 -   [URL de dockerhub para descargar la imagen](https://cloud.docker.com/u/wistonmiguel/repository/docker/wistonmiguel/nicaventas) 
+
 `docker pull wistonmiguel/nicaventas:Lv1`
 -   [Archivos necesarios para construir la imagen docker](https://drive.google.com/open?id=1babgBre5eauKAowPFIol4YZXVjcw2NYz)
 
