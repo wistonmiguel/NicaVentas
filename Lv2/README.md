@@ -25,10 +25,11 @@ Esta es la nueva estructura base que usaremos en nuestro entorno. Procedemos a a
 
 ## Desarrollo del MicroServicio
 
-Procedemos a evolucionar el que teníamos con la creación de nuestro fichero schema.sql el cual se lista a continuación:
+Procedemos a evolucionar el fichero que teníamos con la creación de nuestro fichero schema.sql el cual se lista a continuación:
 
-> schema.sqlCREATE TABLE IF NOT EXISTS location(
+> schema.sqlCREATE
 
+        TABLE IF NOT EXISTS location(
         country varchar(2) NOT NULL,
         city varchar(52) NOT NULL,
         active ENUM('True', 'False') NOT NULL,
