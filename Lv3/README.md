@@ -119,6 +119,8 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados desde u
  
      docker-compose build
      docker-compose up
+
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/13.jpg)
  
  2 ) Realizamos las pruebas pertinentes de varias peticiones GET para verificar la autorización de venta en Managua, Nicaragua y si la caché está entrando en acción luego del primer fallo
 
