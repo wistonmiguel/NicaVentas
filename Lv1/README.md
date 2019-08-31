@@ -4,7 +4,7 @@ Inicialmente vamos a desarrollar un microservicio de prueba. En este primer nive
 Para empezar vamos a realizar la estructura de directorios y archivos que necesitamos para lanzar nuestro microservicio.
 Se crearán las los siguientes directorios y archivos:
 
-![imagen](https://i.stack.imgur.com/h9beB.png)
+![imagen](img/1.jpg)
 
 Esta es la estructura base que usaremos en nuestro entorno. Procedemos a analizar el papel que juega cada elemento para obtener la lógica necesaria que nos permita un desarrollo objetivo del presente caso.
 
