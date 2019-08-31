@@ -1,7 +1,7 @@
 ﻿# MicroServicio Condiciones Lv4
-Finalmente hemos llegado al penáculo de nuestros objetivos, en esta ocación vamos a agregar a nuestro proyecto un nuevo microservicio que estará encargado de brindar información de las condiciones de venta para nuestros productos dependiento de ciertas reglas que abaraten o encarezcan su precio base en funución de las condiciones metereológicas de la ciudad en un pais especificado. En este cuarto y último nivel el objetivo será obtener una respuesta con datos desde la base de datos y almecenar contenido en caché usando Redis para optimizar el flujo de datos obteniendo contenido en caché en vez de usar siempre un acceso a base de datos. 
+Finalmente hemos llegado al penáculo de nuestros objetivos, en esta ocasión vamos a agregar a nuestro proyecto un nuevo microservicio que estará encargado de brindar información de las condiciones de venta para nuestros productos dependiento de ciertas reglas que abaraten o encarezcan su precio base en función de las condiciones metereológicas de la ciudad en un pais especificado. En este cuarto y último nivel el objetivo será consultar a travéz de un nuevo microservicio llamado Condiciones_NV precios de nuestros productos, así como descubrir si la venta de un determinado producto será más cara o barata cuando llueva o haga sol. 
 ## Análisis del Caso y Funcionabilidad
-Para empezar mantendrémos la misma estructura de directorios y ficheros que teníamos en niveles anteriores, sin embargo, agregaremos un directorio nuevo que denominaremos Condiciones_NV en el cual amacenaremos los ficheros necesarios para la ejecución del microservicio Condiciones_NV. 
+Para empezar mantendrémos la misma estructura de directorios y ficheros que teníamos en niveles anteriores, sin embargo, agregaremos un directorio nuevo con el nombre de Condiciones_NV en el cual amacenaremos los ficheros necesarios para la ejecución del microservicio Condiciones_NV. 
 
     Lv4
     ├── Condiciones_NV
@@ -20,10 +20,10 @@ Para empezar mantendrémos la misma estructura de directorios y ficheros que ten
     ├── docker-compose.yml
     └── schema.sql
 
-Podemos observar que mantenemos la misma estructura que en el Nivel 3 de nuestra api, sin embargo la adición de nuestro microservicio de Condiciones_NV agrega al entorno un directorio más. Por ello vamos a tener inicialmente una réplica del microservicio Disponibilidad_NV con ciertas variaciones que se explicará a continuación.
+Podemos observar que mantenemos la misma estructura que en el nivel anterior de nuestra api (Lv3) a excepción del directorio agregado. Por ello vamos a tener inicialmente una réplica del microservicio Disponibilidad_NV con ciertas variaciones que se explicará a continuación.
 ## Desarrollo del MicroServicio
 
-Procedemos a evolucionar el fichero que teníamos con la creación de nuestro fichero schema.sql para agregar las tablas de productos y reglas la cual nos determinarán las Condiciones de Venta:
+Procedemos a evolucionar el fichero sql que teníamos que inicializaba la base de datos, agregando nuevas líneas que se encarguen de agregar las tablas de productos y reglas que nos determinarán las Condiciones de Venta:
 
 > schema.sql
 
@@ -109,9 +109,9 @@ Procedemos a evolucionar el fichero que teníamos con la creación de nuestro fi
     INSERT INTO rules values(NULL, 'ES', 'Alcala de Henares', 'AZ00001', 800, 804, 0.5);
     INSERT INTO rules values(NULL, 'ES', 'Alcala de Henares', 'AZ00002', 800, 804, 1.5);
 
-Este fichero sql se ha editado para incluir una tabla llamada product, esta tabla determinará los datos de productos a la venta. También se agrega la tabla rules en la cual guardamos las condiciones de venta según el clima (lluvioso o soleado) para determinar la variación sobre el precio base del producto. A nivel de ejemplo se han agregado dos productos y algunas reglas para sus condiciones de venta según el clima de ciudades de Nicaragua y España. Cabe mencionar que se utilizó integridad referencial.
+Este fichero sql se ha editado para incluir una tabla llamada product, esta tabla determinará los datos de productos a la venta. También se agrega la tabla rules en la cual guardamos las condiciones de venta según el clima (lluvioso o soleado) para determinar la variación sobre el precio base del producto. A nivel de ejemplo se han agregado dos productos y algunas reglas para sus condiciones de venta según el clima de ciudades de Nicaragua y España. Cabe mencionar que se utilizó integridad referencial para respetar que no existan reglas sin asociación de productos, ciudades y paises.
 
-Habiendo entendido la lógica del entorno que vamos a utilizar procedemos a la creación de nuestro fichero Dockerfile el cual se lista a continuación:
+Habiendo entendido la lógica del entorno que vamos a utilizar procedemos a la creación del fichero Dockerfile correspondiente al servicio Condiciones_NV el cual se lista a continuación:
 
 > Dockerfile
 
@@ -124,7 +124,7 @@ Habiendo entendido la lógica del entorno que vamos a utilizar procedemos a la c
     CMD ["python", "app.py"]
     EXPOSE 5000
 
-En esta ocasión podemos destacar que en nuestro Cockerfile se especifíca de gran importancia la instalación de la librería requests ya que es un pilar fundamental para el desarrollo del microservicio. La librería requests está dotada de funciones que nos permiten realizar peticiones curl hacia un servidor local o remoto, obteniendo un resultado json que podemos maniobrar para lograr nuestros objetivos. También vemos que utilizamos como  imagen base Python, replicando nuestra carpeta app dentro de la imagen, instalando los siguientes requerimientos:
+En esta ocasión podemos destacar que en nuestro Dockerfile se especifíca como gran importancia la instalación de la librería requests ya que es un pilar fundamental para el desarrollo de este microservicio. La librería requests está dotada de funciones que nos permiten realizar peticiones por medio de curl hacia un servidor local o remoto, obteniendo un resultado json que podemos maniobrar para lograr nuestros objetivos. También cabe recalcar que utilizamos como imagen base Python, replicando nuestra carpeta app dentro de la imagen, instalando los siguientes requerimientos:
 
 > requirements.txt
 
@@ -140,7 +140,7 @@ En esta ocasión podemos destacar que en nuestro Cockerfile se especifíca de gr
     redis==3.2.1
     Werkzeug==0.15.5
 
-Finalmente se ejecuta con Python el fichero app.py exponiendo el puerto 5000 (Flask) al exterior de todo contenedor creado a partir de esta imagen. El fichero que se ejecuta de manera indeterminada junto con el servicio de Flask es nuestra app.py la cual consta del siguiente código:
+Finalmente se ejecutá este microservicio con Python usando el fichero app.py exponiendo internamente en el su contenedor el puerto 5000 (Flask) vinculando el puerto 8001 exterior de todo contenedor creado a partir de esta imagen. El fichero app.py que se ejecutá de manera indeterminada junto con el servicio de Flask el cual consta del siguiente código:
 
     #!flask/bin/python
     from flask import Flask, jsonify, request, escape
@@ -244,7 +244,7 @@ Finalmente se ejecuta con Python el fichero app.py exponiendo el puerto 5000 (Fl
     if __name__ == '__main__':
         app.run(debug=True, host='0.0.0.0')
 
-Como podemos observar, ahora tendríamos una versión de app.py en un microservicio diferente que igualmente atenderá solicitudes y respondrás con datos provenientes de mysql. El puerto en escucha hacia el exterior será el 8001 para que no las peticiones no interfieran con el servicio de Disponibilidad_NV que escucha en el puerto 8000. El fichero que ejecuta las solicitudes hacia la base de datos es worklog.py el cual se lista a continuación
+Como podemos observar, ahora tendríamos una versión de app.py ejecutándose en un microservicio diferente que igualmente atenderá solicitudes y respondrá con datos provenientes de mysql. El puerto en escucha hacia el exterior habíamos dicho será el 8001 para que no las peticiones no interfieran con el servicio de Disponibilidad_NV que escucha en el puerto 8000. El fichero que ejecuta las solicitudes hacia la base de datos es worklog.py el cual se lista a continuación
 
     class Worklog:
     
