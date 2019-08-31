@@ -1,10 +1,10 @@
 ﻿# MicroServicio Disponibilidad Lv2
-Continuando vamos a desarrollar un microservicio con datos reales. En segundo primer nivel el objetivo será obtener una respuesta con datos reales desde una base de datos mysql de un microservicio corriendo flask. 
+Continuando vamos a desarrollar un microservicio con datos reales. En este segundo nivel el objetivo será obtener una respuesta con datos reales desde una base de datos mysql de un microservicio corriendo flask. 
 ## Análisis del Caso y Funcionabilidad
 Para empezar vamos a evolucionar un poco la estructura de directorios y ficheros que necesitamos para lanzar nuestro microservicio.
 La estructura de nuestro entorno aumenta un poco agregando 3 ficheros nuevos, entre los cuales destacamos los ficheros docker-compose.yml, schema.sql y worlog.py organizados de la siguiente forma:
 
-    
+    Lv2
     ├── Disponibilidad_NV
     │   ├── app
     │   │   ├── app.py
@@ -12,13 +12,16 @@ La estructura de nuestro entorno aumenta un poco agregando 3 ficheros nuevos, en
     │   │   └── worklog.py
     │   └── Dockerfile
     ├── docker-compose.yml
-    ├── schema.sql
+    └── schema.sql
 
 Esta es la nueva estructura base que usaremos en nuestro entorno. Procedemos a analizar el papel que juega cada elemento para obtener la lógica necesaria que nos permita un desarrollo objetivo del presente caso.
 
-**El fichero schema.sql** tiene como función la escritura de todas las ordenes necesarias para inicializar la base de datos mysql, tablas y registros asociados. 
+**El fichero schema.sql** tiene como función la escritura de todas las ordenes necesarias para inicializar la base de datos mysql, tablas y registros asociados.
+
 **El fichero worklog.py** almacena el código de instrucciones necesarias para realizar operaciones sobre la base de datos mysql, ingresar o retornar datos según sea el caso.
+
 **El fichero docker-compose.yml** contiene la ejecución orquestadadel  comportamiento en conjunto los servicios del proyecto.
+
 
 ## Desarrollo del MicroServicio
 
