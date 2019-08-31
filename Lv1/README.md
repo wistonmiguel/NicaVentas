@@ -84,18 +84,29 @@ Como observamos es un objeto json fijo el cual es devuelto cada vez que se cumpl
 
 Procedemos a realizar las pruebas necesarias para obtener los resultados y demostrar el correcto funcionamiento del primer nivel de NicaVentas.
 
- 1. Construimos la Imagen desde la ruta del fichero Dockerfile
+ 1 ) Construimos la Imagen desde la ruta del fichero Dockerfile.
+ 
  `docker build -t wistonmiguel/nicaventas:Lv1`
+ 
 ![enter image description here](https://lh3.google.com/u/0/d/1kRIc8huU2XrlFYFvIsMqBFOpaNqoGaMb=w1366-h632-iv1)
- 2. Creamos un contenedor a partir de nuestra imagen corriendo el servicio 
+ 2 ) Creamos un contenedor a partir de nuestra imagen corriendo el servicio.
+  
 `docker run -p 8000:5000 wistonmiguel/nicaventas:Lv1`
-![enter image description here](https://lh3.google.com/u/0/d/1yiCRd0Hn-d6e0_ojOLbs08ufWp75IT-k=w1366-h632-iv1)
- 3. Realizamos las pruebas pertinentes de peticiones GET 
- `curl localhost:8000/active`
-![enter image description here](https://lh3.google.com/u/0/d/1Q4U50MldvNM35kqjiEIJzjJVGBKvFtV6=w1366-h632-iv1)Como podemos observar la respuesta a la petición GET se mantiene fija y con esta demostración se completa el objetivo buscado en este Nivel 1 del servicio NicaVentas.
 
-4. Finalmente después de haber corroborado que nuestro servicio funciona correctamente procedemos a la publicación de nuestra imagen usando un repositorio personal en docker hub.
+![enter image description here](https://lh3.google.com/u/0/d/1yiCRd0Hn-d6e0_ojOLbs08ufWp75IT-k=w1366-h632-iv1)
+3 ) Realizamos las pruebas pertinentes de peticiones GET
+
+`curl localhost:8000/active`
+
+![enter image description here](https://lh3.google.com/u/0/d/1Q4U50MldvNM35kqjiEIJzjJVGBKvFtV6=w1366-h632-iv1)
+Como podemos observar la respuesta a la petición GET se mantiene fija y con esta demostración se completa el objetivo buscado en este Nivel 1 del servicio NicaVentas.
+
+4 ) Finalmente después de haber corroborado que nuestro servicio funciona correctamente procedemos a la publicación de nuestra imagen usando un repositorio personal en docker hub.
+
 `docker push wistonmiguel/nicaventas:Lv1`
+
 ![enter image description here](https://lh3.google.com/u/0/d/1ml9pnaL9VeKPSELcWO7eMiXHDa8Ucqh9=w1366-h632-iv1)
+
 ![enter image description here](https://lh3.google.com/u/0/d/1WRsaJRCMEzO7lzBBp3NUmb_ISqsH-bO8=w1366-h632-iv2)
+
 
