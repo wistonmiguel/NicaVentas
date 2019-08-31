@@ -43,6 +43,7 @@ En base a lo anterior expuesto se han realizaron  4 fases de  cumpliendo con los
 
 -   [Documento explicativo del trabajo realizado](https://github.com/wistonmiguel/NicaVentas/tree/master/Lv2)
 -  [Archivo docker-compose](https://drive.google.com/open?id=1oxbVAi7y7DjVIR57-H8Khj1pKjqQ4hUq)
+
 `docker pull wistonmiguel/nicaventas:Lv2`
 
 ### Nivel 3
