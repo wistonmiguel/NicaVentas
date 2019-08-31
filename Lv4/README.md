@@ -62,6 +62,10 @@ Procedemos a evolucionar el fichero sql que teníamos que inicializaba la base d
     INSERT INTO location (country, city, active) values ('NI', 'Rivas', 'False');
     INSERT INTO location (country, city, active) values ('NI', 'Jinotega', 'False');
     INSERT INTO location (country, city, active) values ('NI', 'Corn Island', 'False');
+    INSERT INTO location (country, city, active) values ('NI', 'Nueva Guinea', 'False');
+    .
+    .
+    .
     INSERT INTO location (country, city, active) values ('ES', 'Madrid', 'False');
     INSERT INTO location (country, city, active) values ('ES', 'Barcelona', 'False');
     INSERT INTO location (country, city, active) values ('ES', 'Valencia', 'False');
@@ -88,6 +92,10 @@ Procedemos a evolucionar el fichero sql que teníamos que inicializaba la base d
     INSERT INTO rules values(NULL, 'NI', 'Leon', 'AZ00002', 500, 599, 0.5);
     INSERT INTO rules values(NULL, 'NI', 'Leon', 'AZ00001', 800, 804, 0.5);
     INSERT INTO rules values(NULL, 'NI', 'Leon', 'AZ00002', 800, 804, 1.5);
+    INSERT INTO rules values(NULL, 'NI', 'Nueva Guinea', 'AZ00001', 500, 599, 1.5);
+    INSERT INTO rules values(NULL, 'NI', 'Nueva Guinea', 'AZ00002', 500, 599, 0.5);
+    INSERT INTO rules values(NULL, 'NI', 'Nueva Guinea', 'AZ00001', 800, 804, 0.5);
+    INSERT INTO rules values(NULL, 'NI', 'Nueva Guinea', 'AZ00002', 800, 804, 1.5);
     INSERT INTO rules values(NULL, 'ES', 'Barcelona', 'AZ00001', 500, 599, 1.5);
     INSERT INTO rules values(NULL, 'ES', 'Barcelona', 'AZ00002', 500, 599, 0.5);
     INSERT INTO rules values(NULL, 'ES', 'Barcelona', 'AZ00001', 800, 804, 0.5);
