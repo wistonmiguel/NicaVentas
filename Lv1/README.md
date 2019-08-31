@@ -90,7 +90,7 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados y demos
  
  `docker build -t wistonmiguel/nicaventas:Lv1`
  
-![enter image description here](https://lh3.google.com/u/0/d/1kRIc8huU2XrlFYFvIsMqBFOpaNqoGaMb=w1366-h632-iv1)
+![image](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/2.jpg)
  
  2 ) Creamos un contenedor a partir de nuestra imagen corriendo el servicio.
   
