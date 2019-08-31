@@ -3,7 +3,9 @@ Inicialmente vamos a desarrollar un microservicio de prueba. En este primer nive
 ## Análisis del Caso y Funcionabilidad
 Para empezar vamos a realizar la estructura de directorios y archivos que necesitamos para lanzar nuestro microservicio.
 Se crearán las los siguientes directorios y archivos:
+
 ![imagen](https://lh4.googleusercontent.com/TYvl12fYM8SVbD0MXpCc1WAzJEvEhw_l3vMKxxZSNmvBK7aSTrSugOYb1EUGkZi4YynEOflP2zzTKx3lTsfq=w1366-h632)
+
 Esta es la estructura base que usaremos en nuestro entorno. Procedemos a analizar el papel que juega cada elemento para obtener la lógica necesaria que nos permita un desarrollo objetivo del presente caso.
 
 **El directorio app** será replicado al momento de realizar el contenedor de nuestra aplicación, esta contendrá el código python asociado al comportamiento en ejecución de nuestro código en dicho contenedor. 
@@ -89,16 +91,19 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados y demos
  `docker build -t wistonmiguel/nicaventas:Lv1`
  
 ![enter image description here](https://lh3.google.com/u/0/d/1kRIc8huU2XrlFYFvIsMqBFOpaNqoGaMb=w1366-h632-iv1)
+ 
  2 ) Creamos un contenedor a partir de nuestra imagen corriendo el servicio.
   
 `docker run -p 8000:5000 wistonmiguel/nicaventas:Lv1`
 
 ![enter image description here](https://lh3.google.com/u/0/d/1yiCRd0Hn-d6e0_ojOLbs08ufWp75IT-k=w1366-h632-iv1)
+
 3 ) Realizamos las pruebas pertinentes de peticiones GET
 
 `curl localhost:8000/active`
 
 ![enter image description here](https://lh3.google.com/u/0/d/1Q4U50MldvNM35kqjiEIJzjJVGBKvFtV6=w1366-h632-iv1)
+
 Como podemos observar la respuesta a la petición GET se mantiene fija y con esta demostración se completa el objetivo buscado en este Nivel 1 del servicio NicaVentas.
 
 4 ) Finalmente después de haber corroborado que nuestro servicio funciona correctamente procedemos a la publicación de nuestra imagen usando un repositorio personal en docker hub.
