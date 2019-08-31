@@ -31,7 +31,7 @@ def info():
 #RUTA PARA CONSULTAR EL PRECIO DEL PRODUCTO
 @app.route('/price/<sku>')
 def get_product_price(sku):
-#    try:
+    try:
         wl = Worklog(mysql, app.logger)
         result = wl.get_price(escape(sku))
         price = float(result[0][0])
@@ -40,11 +40,11 @@ def get_product_price(sku):
         response = {
             "price": float(price),
             "sku": escape(sku),
-            "description": ftfy.fix_text(description, uncurl_quotes=True)
+            "description": description
         }
         return jsonify(response)
-#    except:
-#        return jsonify({"message":"No existen datos Asociados"})
+    except:
+        return jsonify({"message":"No existen datos Asociados"})
 
 #RUTA PARA CONSULTAR LAS CONDICIONES DE VENTA SEGUN ESTADO DEL TIEMPO
 @app.route('/quote', methods=['POST'])
@@ -74,11 +74,11 @@ def post_location():
 
             if(result):
                 variation = float(result[0][0])
-                description = result[0][1].encode('unicode_escape').decode('unicode_escape')
+                description = result[0][1]
                 price = float(result[0][2])
             else:
                 result2 = wl.obtain_product(**payload)
-                description = result2[0][0].encode('unicode_escape').decode('unicode_escape')
+                description = result2[0][0]
                 price = float(result2[0][1])
                 variation = float(1.0)
             redis_cli.set(str(key), str('{"base_price": '+str(price)+', "description":"'+str(description)+'", "variation": '+str(variation)+'}'))
