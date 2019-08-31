@@ -72,8 +72,10 @@ En base a lo anterior expuesto se han realizaron  4 fases de  cumpliendo con los
 
 -   [Documento explicativo del trabajo realizado](https://github.com/wistonmiguel/NicaVentas/tree/master/Lv4)
 -   [Archivo docker-compose](https://drive.google.com/open?id=1ZNKx8mjF_2Q-sFQcvrBr3nFinEFE54B8)
-    `docker pull wistonmiguel/nicaventas:Lv4C
-    docker pull wistonmiguel/nicaventas:Lv4D`
+    
+    `docker pull wistonmiguel/nicaventas:Lv4C`
+
+    `docker pull wistonmiguel/nicaventas:Lv4D`
 
 
 -   [Script para hacer la carga inicial de los valores iniciales de las tablas de la base de datos.](https://drive.google.com/open?id=1ZNKx8mjF_2Q-sFQcvrBr3nFinEFE54B8)
