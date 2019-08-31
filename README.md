@@ -27,7 +27,7 @@ En base a lo anterior expuesto se han realizaron  4 fases de  cumpliendo con los
 -   [Documento explicativo del trabajo realizado](https://github.com/wistonmiguel/NicaVentas/tree/master/Lv1)
 -   [URL de dockerhub para descargar la imagen](https://cloud.docker.com/u/wistonmiguel/repository/docker/wistonmiguel/nicaventas) 
 `docker pull wistonmiguel/nicaventas:Lv1`
--   [Archivos necesarios para construir la imagen docker](https://drive.google.com/open?id=1ynMIGYTfGOd7TMHYsObjwycpcw6-Uwq8)
+-   [Archivos necesarios para construir la imagen docker](https://drive.google.com/open?id=1babgBre5eauKAowPFIol4YZXVjcw2NYz)
 
 ### Nivel 2
 
@@ -41,7 +41,7 @@ En base a lo anterior expuesto se han realizaron  4 fases de  cumpliendo con los
 #### Entregables:
 
 -   [Documento explicativo del trabajo realizado](https://github.com/wistonmiguel/NicaVentas/tree/master/Lv2)
--  [Archivo docker-compose](https://drive.google.com/open?id=1GO_qj1NBPY7fvakWJI9rwDPKv-k0M4Ln)
+-  [Archivo docker-compose](https://drive.google.com/open?id=1oxbVAi7y7DjVIR57-H8Khj1pKjqQ4hUq)
 - `docker pull wistonmiguel/nicaventas:Lv2`
 
 ### Nivel 3
@@ -55,7 +55,7 @@ En base a lo anterior expuesto se han realizaron  4 fases de  cumpliendo con los
 #### Entregables:
 
 -   [Documento explicativo del trabajo realizado](https://github.com/wistonmiguel/NicaVentas/tree/master/Lv3)
--   [Archivo docker-compose](https://drive.google.com/open?id=1M1tAnxtRU7Phl33XRZ_3zWvhDeDBB5Od)
+-   [Archivo docker-compose](https://drive.google.com/open?id=1evYfKTRUAD-pVPDIS91CMYC00WkGZ6G2)
 - `docker pull wistonmiguel/nicaventas:Lv3`
 
 ### Nivel 4
@@ -68,8 +68,8 @@ En base a lo anterior expuesto se han realizaron  4 fases de  cumpliendo con los
 
 #### Entregables:
 
--   Documento explicativo del trabajo realizado
--   Archivo `docker-compose`
+-   [Documento explicativo del trabajo realizado](https://github.com/wistonmiguel/NicaVentas/tree/master/Lv4)
+-   [Archivo docker-compose](https://drive.google.com/open?id=1ZNKx8mjF_2Q-sFQcvrBr3nFinEFE54B8)
 - `docker pull wistonmiguel/nicaventas:Lv4C`
 - `docker pull wistonmiguel/nicaventas:Lv4D`
--   Script para hacer la carga inicial de los valores iniciales de las tablas de la base de datos.
+-   [Script para hacer la carga inicial de los valores iniciales de las tablas de la base de datos.](https://drive.google.com/open?id=1ZNKx8mjF_2Q-sFQcvrBr3nFinEFE54B8)
