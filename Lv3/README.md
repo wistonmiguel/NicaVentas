@@ -1,5 +1,4 @@
-﻿
-# MicroServicio Disponibilidad Lv3
+﻿# MicroServicio Disponibilidad Lv3
 Continuando vamos a agregar la funcionabilidad de un microservicio que además de acceder a una base de datos pueda guardar datos en caché. En este tercer nivel el objetivo será obtener una respuesta con datos desde la base de datos y almecenar contenido en caché usando Redis para optimizar el flujo de datos obteniendo contenido en caché en vez de usar siempre un acceso a base de datos. 
 ## Análisis del Caso y Funcionabilidad
 Para empezar mantendrémos la misma estructura de directorios y ficheros que teníamos en niveles anteriores, solamente agregaremos el uso de Redis y la manipulación del código para realizar caché en nuestro ficher app.py.
@@ -125,7 +124,7 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados desde u
 
 `curl "localhost:8000/active?city=Managua&country=NI"`
 
-![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/9.jpg)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/14.jpg)
 
 Como podemos observar, en la primer petición no hubo contenido en cachlé por lo tanto fué "miss" sin embargo al realizar nuevamente la consulta podemos ver que hay un acierto de caché y el resultado es devuelto de inmediato por Redis sin acceder a la base de datos de forma innecesaria.
 
@@ -133,5 +132,5 @@ Como podemos observar, en la primer petición no hubo contenido en cachlé por l
 
     curl -d '{"city":"Managua", "country":"NI", "active":"False"}' -H "Content-Type: application/json" -H "Authorization: Bearer 2234hj234h2kkjjh42kjj2b20asd6918" -X PUT localhost:8000/active
 
-![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/10.jpg)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/15.jpg)
 Comprobamos al final que al actualizarse un dato de disponibilidad de venta de un estado a otro, la caché queda invalidada, por lo que si solicitamos el estado de disponibilidad de venta se debe realizar la consulta directamente a la base de datos para ser nuevamente colocada en caché y reutilizada como se muestra en la imagen.
