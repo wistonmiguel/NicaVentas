@@ -96,13 +96,13 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados y demos
   
 `docker run -p 8000:5000 wistonmiguel/nicaventas:Lv1`
 
-![enter image description here](https://lh3.google.com/u/0/d/1yiCRd0Hn-d6e0_ojOLbs08ufWp75IT-k=w1366-h632-iv1)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/3.jpg)
 
 3 ) Realizamos las pruebas pertinentes de peticiones GET
 
 `curl localhost:8000/active`
 
-![enter image description here](https://lh3.google.com/u/0/d/1Q4U50MldvNM35kqjiEIJzjJVGBKvFtV6=w1366-h632-iv1)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/4.jpg)
 
 Como podemos observar la respuesta a la petición GET se mantiene fija y con esta demostración se completa el objetivo buscado en este Nivel 1 del servicio NicaVentas.
 
@@ -110,8 +110,8 @@ Como podemos observar la respuesta a la petición GET se mantiene fija y con est
 
 `docker push wistonmiguel/nicaventas:Lv1`
 
-![enter image description here](https://lh3.google.com/u/0/d/1ml9pnaL9VeKPSELcWO7eMiXHDa8Ucqh9=w1366-h632-iv1)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/5.jpg)
 
-![enter image description here](https://lh3.google.com/u/0/d/1WRsaJRCMEzO7lzBBp3NUmb_ISqsH-bO8=w1366-h632-iv2)
+![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/6.jpg)
 
 
