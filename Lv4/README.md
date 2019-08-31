@@ -400,7 +400,7 @@ Podemos observar que en efecto se ha detectado variación en la venta de helados
 ```
 curl -d '{"city":"Leon", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
 
-curl -d '{"city":"Corn Island", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
+curl -d '{"city":"Nueva Guinea", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
 ```
 
 [![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/23.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/23.jpg)
