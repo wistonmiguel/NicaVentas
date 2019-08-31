@@ -230,7 +230,7 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados y demos
  
  `docker-compose build`
  
-![image](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/2.jpg)
+![image](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/7.jpg)
  
  2 ) Desplegamos los servicios usando docker-compose.
   
