@@ -360,7 +360,7 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados desde e
 
 `docker-compose build`
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y&feature=youtu.be&t=35) 
+[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y&feature=youtu.be&t=35)
 
 [![image](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/16.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/16.jpg)
 
