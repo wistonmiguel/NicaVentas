@@ -360,8 +360,6 @@ Procedemos a realizar las pruebas necesarias para obtener los resultados desde e
 
 `docker-compose build`
 
-[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y&feature=youtu.be&t=35)
-
 [![image](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/16.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/16.jpg)
 
 2 ) Desplegamos los servicios usando docker-compose.
@@ -393,7 +391,7 @@ curl -d '{"city":"Leon", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: app
 curl -d '{"city":"Corn Island", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
 ```
 
-[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/20.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/20.jpg)
+[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/22.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/22.jpg)
 
 5 ) Finalmente verificamos que la caché funcione
 
@@ -403,4 +401,4 @@ curl -d '{"city":"Leon", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: app
 curl -d '{"city":"Corn Island", "country":"NI", "sku":"AZ00002"}' -H "Content-Type: application/json" -X POST localhost:8001/quote
 ```
 
-[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/21.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/21.jpg)
+[![enter image description here](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/23.jpg)](https://raw.githubusercontent.com/wistonmiguel/NicaVentas-img/master/23.jpg)
